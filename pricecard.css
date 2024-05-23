@@ -1,0 +1,100 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 30px;
+    width: 320px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  }
+  .card h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  .card p {
+    color: #666;
+    margin: 10px 0;
+  }
+  .price {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+  }
+  .recommended {
+    border: 2px solid #ff4500;
+  }
+  .recommended h2 {
+    color: #ff4500;
+  }
+  .recommended::before {
+    content: 'Recommended';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4500;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+  }
+  ul li {
+    background-color: #f7f9fc;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  ul li:hover {
+    background-color: #e6efff;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #ffffff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button img {
+    width: 30px;
+    height: 30px;
+}
+
+.fa-trash-can {
+  color: blueviolet;
+}
+
+.fa-pen-to-square {
+  color: blueviolet;
+}

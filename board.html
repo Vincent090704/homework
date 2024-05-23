@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="board.css">
+    <title>Invoice Interface</title>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="financial-info">
+            <p>Taxable Amount: <span>$120.00</span></p>
+            <p>Discount: <span>$13.20</span></p>
+            <p>Vat: <span>$0.00</span></p>
+            <p>
+                <span class="round-off-label">Round Off: 
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </span>
+                <span>$0.00</span>
+            </p>
+            <p><span>Total Amount:</span>
+                <span>$107.80</span></p>
+        </div>
+        
+            <div class="signature-section">
+                <div class="signature-box">
+                    <div class="signature-options">
+                        <label>
+                            <input type="radio" name="signature-type" value="manual" checked>
+                            Manual Signature
+                            <input type="radio" name="signature-type" value="esignature">
+                            eSignature
+                        </label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="signature-name">Select Signature Name</label>
+                    <select id="signature-name">
+                        <option value="Allen">Allen</option>
+                    </select>
+                </div>
+                <label > Signature Image</label>
+                <div class="signature-preview">
+                    
+                    <label for="upload-signature"></label>
+                    <img id="signature-image" src="img/avatar/signature-allen.png" alt="Allen's signature">
+                </div>
+                <div class="upload-section">
+                    <input type="file" id="upload-signature" accept="image/*">
+                    
+                </div>
+            </div>
+        
+        <div class="buttons">
+            <button class="cancel-btn">Cancel</button>
+            <button class="save-btn">Save</button>
+            <button class="save-send-btn">Save & Send</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('upload-signature').addEventListener('change', function(event) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('signature-image').src = e.target.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.invoice-container {
+    background-color: #e7dcdc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+}
+
+.financial-info p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.financial-info p span {
+    font-weight: bold;
+}
+
+.financial-info p span.round-off-label {
+    font-weight: normal;
+}
+
+.round-off-container {
+    display: flex;
+    align-items: center;
+}
+
+.financial-info p:last-child {
+    align-items: center;
+}
+
+
+
+.round-off-container {
+    display: flex;
+    align-items: center;
+}
+
+.signature-box {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    
+}
+
+.signature-section {
+    margin-bottom: 20px;
+}
+
+.signature-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.signature-options label {
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.signature-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+#signature-name {
+    margin: 20px 0;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.signature-preview {
+    margin: 20px ;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+.signature-preview img {
+    max-width: 80%;
+    height: auto;
+}
+
+.upload-section {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.upload-section input[type="file"] {
+    display: none;
+}
+
+.upload-section label {
+    display: inline-block;
+    background-color: #7c4dff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-section input[type="file"]:focus + label,
+.upload-section label:hover {
+    background-color: #6a40c9;
+}
+
+.buttons {
+    text-align: right;
+    padding-top: 20px;
+}
+
+button {
+    background-color: #7c4dff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+button.cancel-btn {
+    background-color: #ccc;
+}
+
+button:hover {
+    background-color: #6a40c9;
+}
+
+button.cancel-btn:hover {
+    background-color: #bbb;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    width: 50px;  /* Increase width */
+    height: 28px;  /* Increase height */
+    margin: 0 10px; /* Adjust margin to place switch next to text */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 28px; /* Adjust border-radius to match new height */
+    float: left;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;  /* Increase size */
+    width: 22px;  /* Increase size */
+    left: 3px;  /* Adjust positioning */
+    bottom: 3px;  /* Adjust positioning */
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+
+    float: left
+}
+
+input:checked + .slider {
+    background-color: #7c4dff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px); /* Adjust translateX to match new width */
+}
