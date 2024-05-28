@@ -1,0 +1,74 @@
+Updates to keyboard shortcuts … On Thursday, 1 August 2024, Drive keyboard shortcuts will be updated to give you first-letter navigation.Learn more
+<html>
+<head>
+	<title>Javascript basic</title>
+	<style>
+	  .draggable {
+	    width: 100px;
+	    height: 100px;
+	    border: 1px solid black;
+	    padding: 5px;
+	    margin: 10px;
+	    cursor: grab;
+	  }
+
+	  .moving_zone {
+	    width: 800px;
+	    height: 400;
+	    border: 2px dashed #ccc;
+	    padding: 10px;
+	    margin: 10px;
+	    background-color: #eee;
+	  }
+
+	  #img1 {
+	  	position: absolute;
+	  }
+	</style>
+	<script>
+		
+		document.addEventListener("keyup", handleKeyUp);	//the page is listening the event from key press
+
+		function handleKeyUp(event) {
+  var img = document.getElementById('img1');
+  var imgRect = img.getBoundingClientRect();
+  var movingZoneRect = document.querySelector('.moving_zone').getBoundingClientRect();
+
+  switch (event.key) {
+    case 'ArrowRight':
+      if (imgRect.right < movingZoneRect.right) {
+        img.style.left = (img.offsetLeft + 20) + 'px';
+      }
+      break;
+    case 'ArrowDown':
+      if (imgRect.bottom < movingZoneRect.bottom) {
+        img.style.top = (img.offsetTop + 20) + 'px';
+      }
+      break;
+    case 'ArrowLeft':
+      if (imgRect.left > movingZoneRect.left) {
+        img.style.left = (img.offsetLeft - 20) + 'px';
+      }
+      break;
+    case 'ArrowUp':
+      if (imgRect.top > movingZoneRect.top) {
+        img.style.top = (img.offsetTop - 20) + 'px';
+      }
+      break;
+  }
+}
+
+	</script>
+<head>
+<body>
+	<div class="moving_zone">
+		<img id="img1" src="https://images.pexels.com/photos/22610782/pexels-photo-22610782/free-photo-of-a-close-up-of-basil-plants-in-pots.jpeg" class="draggable"/>
+	</div>
+	
+
+	<br/><br/><br/><br/>
+	<div><strong>DIY</strong>: move the image within the gray area only with 4 keys Up/Down/Left/Right</div>
+	
+
+</body>
+</html>

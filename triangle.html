@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hypotenuse Calculator</title>
+    <link rel="stylesheet" type="text/css" href="triangle.css">
+</head>
+<body>
+    <div class="board">
+        <div class="calculator">
+            <h1>Calculate the Hypotenuse</h1>
+            <label for="opposite">Opposite:</label>
+            <input type="number" id="opposite" name="opposite">
+            <label for="adjacent">Adjacent:</label>
+            <input type="number" id="adjacent" name="adjacent">
+            <button onclick="calculateHypotenuse()">Calculate</button>
+            <label for="hypotenuse">Hypotenuse:</label>
+            <input type="text" id="hypotenuse" name="hypotenuse" readonly>
+            <img src="https://www.mathsisfun.com/algebra/images/adjacent-opposite-hypotenuse.svg"/>
+        </div>
+    </div>
+    <script src="triangle.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+Updates to keyboard shortcuts … On Thursday, 1 August 2024, Drive keyboard shortcuts will be updated to give you first-letter navigation.Learn more
+<html>
+<head>
+	<title>Javascript basic</title>
+	<style>
+	  .clock {
+	  	font-size: 25pt;
+	  }
+	</style>
+	
+<head>
+<body>
+	<div id="clockDisplay" class="clock"></div>
+
+	
+
+	<br/><br/><br/><br/>
+	<div><strong>DIY</strong>: Convert into AM/PM format. For example: 9:04:12 -> 9:04 AM</div>
+	
+<script>
+		
+		function showTime() {
+		  const date = new Date();
+		  let hours = date.getHours();
+		  let minutes = date.getMinutes();
+		  let seconds = date.getSeconds();
+          let period = "AM";
+        
+          if(hours >= 12) {
+            period = "PM";
+            if (hours > 12) {
+                hours -= 12;
+            }
+          }else if (hours === 0) {
+            hours = 12;
+          }
+
+        
+
+		  // Format the time with leading zeros for single digits
+		  minutes = minutes.toString().padStart(2, '0');
+		  seconds = seconds.toString().padStart(2, '0');
+
+		  // Combine hours, minutes, and seconds with colons
+		  const time = `${hours}:${minutes}:${period}`;
+
+		  // Update the clock display element (replace with your element ID)
+		  document.getElementById("clockDisplay").innerHTML = time;
+
+		  // Schedule the function to run again every 1 second
+		  setTimeout(showTime, 1000);
+		}
+
+		// Call the showTime function initially to display the current time
+		showTime();
+	</script>
+</body>
+</html>

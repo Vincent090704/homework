@@ -1,0 +1,92 @@
+Updates to keyboard shortcuts … On Thursday, 1 August 2024, Drive keyboard shortcuts will be updated to give you first-letter navigation.Learn more
+<html>
+<head>
+	<title>Javascript basic</title>
+	<script >
+		
+		function print_star(){
+			var rows = parseInt(document.getElementById('txt_width').value);
+			if (rows < 1){
+				return;	//do nothing here
+			}
+			let pattern = "";
+
+			for (let i = 1; i <= rows; i++) {
+			    // Add stars to the pattern for the current row
+			    for (let j = 1; j <= i; j++) {
+			      pattern += "*";
+			    }
+			    // Print the pattern with a newline
+			    // console.log(pattern);
+			    pattern += '<br/>';
+			}
+			document.getElementById('result').innerHTML = pattern;
+		}
+	</script>
+    <script class="centered">
+		function print_diamond(){
+			var rows = parseInt(document.getElementById('txt_width').value);
+			if (rows < 1){
+				return;	//do nothing here
+			}
+			let pattern = "";
+            let totalRows = 2 * rows - 1; 
+			for (let i = 1; i <= rows; i++) {
+			    // Add leading space
+			    for (let j = 1; j <= rows - i; j++) {
+			      pattern += "&nbsp;";
+			    }
+			    // Print the pattern with a newline
+                for (let j = 1; j <= 2 * i - 1; j++) {
+            pattern += "*";
+                }
+			    // console.log(pattern);
+			    pattern += '<br/>';
+			}
+            for (let i = rows - 1; i >= 1; i--) {
+            // Add leading spaces
+            for (let j = 1; j <= rows - i; j++) {
+                pattern += "&nbsp;";
+            }
+            // Add stars
+            for (let j = 1; j <= 2 * i - 1; j++) {
+                pattern += "*";
+            }
+            pattern += "<br/>";
+        }
+			    document.getElementById('result').innerHTML = pattern;
+		    }
+	</script>
+<head>
+<body>
+
+	<table border="1" cellpadding="10">
+		<tr>
+			<td>
+				Number of lines
+			</td>
+			<td>
+				<input type="text" id="txt_width" value="5"/>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<input type="button" value="Print *" onclick="print_star();"/>
+                <input type="button" value="Print Diamond" onclick="print_diamond();"/>
+			</td>
+			<td>
+				<div id="result"></div>
+			</td>
+		</tr>
+	</table>
+	<br/><br/><br/><br/>
+	<div><strong>DIY</strong>: Print diamond of stars</div>
+	<div><strong>Hint</strong>: use blank character</div>
+
+
+	<img src="https://iticopamcq.in/wp-content/uploads/2022/07/image-38.png"/>
+
+
+</body>
+</html>

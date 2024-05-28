@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My chart</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 20px;
+    }
+    #piechart, #geochart {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div>Reference: <a target="_blank" href="https://developers.google.com/chart/interactive/docs/gallery/piechart">Google Pie Chart</a></div>
+<div id="piechart"></div>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Work', 8],
+    ['Eat', 2],
+    ['TV', 4],
+    ['Gym', 2],
+    ['Sleep', 8]
+  ]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+
+<div>DIY: Create a world map using Google chart</div>
+<div id="geochart"></div>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['geochart']});
+google.charts.setOnLoadCallback(drawRegionsMap);
+
+function drawRegionsMap() {
+  var data = google.visualization.arrayToDataTable([
+    ['Country', 'Popularity'],
+    ['Germany', 200],
+    ['United States', 300],
+    ['Brazil', 400],
+    ['Canada', 500],
+    ['France', 600],
+    ['RU', 700]
+  ]);
+
+  var options = {};
+
+  var chart = new google.visualization.GeoChart(document.getElementById('geochart'));
+  chart.draw(data, options);
+}
+</script>
+
+</body>
+</html>
